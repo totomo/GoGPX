@@ -4,7 +4,10 @@ import "fmt"
 
 func printGPX(response Entity) {
 
-	if len(response.Routes) == 0 || len(response.Routes[0].Legs) == 0 {
+	if len(response.Routes) == 0 ||
+		len(response.Routes[0].Legs) == 0 ||
+		len(response.Routes[0].Legs[0].Steps) == 0 {
+		fmt.Println("Not Found.")
 		return
 	}
 
